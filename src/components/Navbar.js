@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { Button } from './Button';
+import logo from "../img/console.png"
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -23,6 +24,7 @@ function Navbar() {
       }, []);
 
     window.addEventListener('resize', showButton);
+   
 
   return (
     <>
@@ -30,7 +32,8 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                    Games <img src='./img/console.png' alt='logo'/>
+                    Games <img src={logo} alt='logo'/>
+
                     </Link> 
 
                     <div className='menu-icon' onClick={handleClick}>

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Games-APP-React/static/css/main.2d1c1e73.css",
+    "main.js": "/Games-APP-React/static/js/main.c54b0c99.js",
+    "index.html": "/Games-APP-React/index.html",
+    "main.2d1c1e73.css.map": "/Games-APP-React/static/css/main.2d1c1e73.css.map",
+    "main.c54b0c99.js.map": "/Games-APP-React/static/js/main.c54b0c99.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d1c1e73.css",
+    "static/js/main.c54b0c99.js"
+  ]
+}

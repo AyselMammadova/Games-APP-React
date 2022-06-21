@@ -2,12 +2,13 @@ import React from 'react';
 import '../App.css';
 import { Button } from './Button';
 import './MainSection.css';
+import video from '../video/main-video.mp4'
 
 function MainSection() {
   return (
     <main>
         <div className='main-container'>
-            <video src='/video/main-video.mp4' autoPlay loop muted />
+            <video src={video} autoPlay loop muted />
             <h1>Nəyi gözləyirsən?</h1>
             <p>Gəl birlikdə oyun dünyasını kəşf edək</p>
             <div className="main-btns">
