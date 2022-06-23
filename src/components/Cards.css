@@ -26,9 +26,7 @@
   }
   
   .cards__item {
-    display: flex;
-    flex: 1;
-    margin: 0 1rem;
+    margin: 1rem 0;
     border-radius: 10px;
   }
   
@@ -55,10 +53,11 @@
     animation-name: fade-img;
     animation-duration: 2s;
   }
-  
+
   .cards__item__pic-wrap::after {
     content: attr(data-category);
     position: absolute;
+    left: 0;
     bottom: 0;
     margin-left: 10px;
     padding: 6px 8px;
@@ -66,8 +65,22 @@
     font-size: 12px;
     font-weight: 700;
     color: #fff;
-    background-color: #1f98f4;
+    background-color: #01b36b;
     box-sizing: border-box;
+  }
+
+  .cards__item__pic-wrap span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 6px 8px;
+    max-width: calc((100%) - 60px);
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background-color: darkslategrey;
+    box-sizing: border-box;
+    border-radius: 0 10px 0 0;
   }
   
   .cards__item__img {
@@ -104,15 +117,4 @@
       width: 84%;
     }
   }
-  
-  @media only screen and (min-width: 1024px) {
-    .cards__items {
-      display: flex;
-    }
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    .cards__item {
-      margin-bottom: 2rem;
-    }
-  }
+ 

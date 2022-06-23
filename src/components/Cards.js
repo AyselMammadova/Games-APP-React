@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import CardItem from './CardItem';
-import image from '../img/1.jpg';
+// import image from '../img/1.jpg';
 import './Cards.css'
 
 function Cards() {
-  const [games,setGames] = useState({items: []});
+  const [games,setGames] = useState([]);
   useEffect(() => {
     const options = {
       method: 'GET',
@@ -14,35 +14,38 @@ function Cards() {
       }
     };
 
-    let url = 'https://free-to-play-games-database.p.rapidapi.com/api/game';
-    console.log(games);
-    fetch(url + '?id=452', options)
+    let url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+
+    fetch(url, options)
       .then(response => response.json())
-      .then((json) => {
-        setGames({
-          items: json,
-        })
-    }).catch(err => console.error(err));
-  }, [])
-
-  console.log(setGames);
+      .then(response => setGames(response))
+      .catch(err => console.error(err));
+  }, []);
 
 
-
+console.log(games);
 
   return (
     <div className="cards">
-        <h1>Text</h1>
+        <h1>Oyunlar aləmi</h1>
         <div className="cards__container">
             <div className="cards_wrapper">
-                <div className="cards__items">
-                <CardItem
-                    src={image}
-                    text={setGames[0]}
-                    label='Adventure'
-                    path='/'
-                    />
-                </div>
+                <div className="cards__items row">
+                
+                {games.map(game => 
+                  <CardItem
+                  key={game.id}
+                  src={game.thumbnail}
+                  text={game.title}
+                  desc={game.short_description}
+                  label={game.genre}
+                  date={game.release_date}
+                  path='/'
+                  />
+           
+                )}
+
+              </div>
             </div>
         </div>
     </div>
