@@ -3,11 +3,12 @@ import '../../App.css';
 import Cards from '../Cards';
 import MainSection from '../MainSection';
 
-function Home() {
+function Home(props) {
+    console.log(props)
     return (
         <>
             <MainSection />
-            <Cards />
+           <Cards games={props.games}/>
         </>
     );
 }

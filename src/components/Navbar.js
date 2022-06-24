@@ -29,9 +29,9 @@ function Navbar() {
   return (
     <>
         <header>
-            <nav className='navbar'>
+            <nav className='custom-navbar'>
                 <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                    <Link to='/Games-APP-React' className='navbar-logo' onClick={closeMobileMenu}>
                     Games <img src={logo} alt='logo'/>
 
                     </Link> 
@@ -41,22 +41,22 @@ function Navbar() {
                     </div>
 
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                        <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                        <li className='custom-nav-item'>
+                            <Link to='/Games-APP-React' className='nav-links' onClick={closeMobileMenu}>
                                 Ana səhifə
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='custom-nav-item'>
                             <Link to='/current-games' className='nav-links' onClick={closeMobileMenu}>
                                 Mövcud oyunlar
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='custom-nav-item'>
                             <Link to='/upcoming-games' className='nav-links' onClick={closeMobileMenu}>
                                 Gələcək oyunlar
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='custom-nav-item'>
                             <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Qeydiyyat
                             </Link>
