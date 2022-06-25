@@ -1,6 +1,5 @@
 import React from 'react';
 import CardItem from './CardItem';
-// import image from '../img/1.jpg';
 import './Cards.css'
 
 function Cards(props) {

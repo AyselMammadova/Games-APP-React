@@ -8,7 +8,7 @@ function Home(props) {
     return (
         <>
             <MainSection />
-           <Cards games={props.games}/>
+            <Cards games={props.games}/>
         </>
     );
 }

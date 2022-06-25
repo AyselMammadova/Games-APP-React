@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { Button } from './Button';
 import logo from "../img/console.png"
@@ -24,6 +24,13 @@ function Navbar() {
       }, []);
 
     window.addEventListener('resize', showButton);
+
+
+    const location = useLocation();
+    console.log(location);
+    const { pathname } = location;
+    const splitLocation = pathname;
+    console.log(splitLocation);
    
 
   return (
@@ -41,22 +48,22 @@ function Navbar() {
                     </div>
 
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                        <li className='custom-nav-item'>
+                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
                             <Link to='/Games-APP-React' className='nav-links' onClick={closeMobileMenu}>
                                 Ana səhifə
                             </Link>
                         </li>
-                        <li className='custom-nav-item'>
+                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
                             <Link to='/current-games' className='nav-links' onClick={closeMobileMenu}>
                                 Mövcud oyunlar
                             </Link>
                         </li>
-                        <li className='custom-nav-item'>
+                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
                             <Link to='/upcoming-games' className='nav-links' onClick={closeMobileMenu}>
                                 Gələcək oyunlar
                             </Link>
                         </li>
-                        <li className='custom-nav-item'>
+                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
                             <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Qeydiyyat
                             </Link>
