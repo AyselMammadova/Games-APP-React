@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Games-APP-React/static/css/main.4e6d7e73.css",
-    "main.js": "/Games-APP-React/static/js/main.cc87e013.js",
+    "main.css": "/Games-APP-React/static/css/main.8b3b1cc5.css",
+    "main.js": "/Games-APP-React/static/js/main.a75065a3.js",
     "static/media/main-video.mp4": "/Games-APP-React/static/media/main-video.8914ffab1932aba1cd9f.mp4",
     "index.html": "/Games-APP-React/index.html",
-    "main.4e6d7e73.css.map": "/Games-APP-React/static/css/main.4e6d7e73.css.map",
-    "main.cc87e013.js.map": "/Games-APP-React/static/js/main.cc87e013.js.map"
+    "main.8b3b1cc5.css.map": "/Games-APP-React/static/css/main.8b3b1cc5.css.map",
+    "main.a75065a3.js.map": "/Games-APP-React/static/js/main.a75065a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e6d7e73.css",
-    "static/js/main.cc87e013.js"
+    "static/css/main.8b3b1cc5.css",
+    "static/js/main.a75065a3.js"
   ]
 }
