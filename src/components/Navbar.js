@@ -25,12 +25,11 @@ function Navbar() {
 
     window.addEventListener('resize', showButton);
 
-
+    // window location href
     const location = useLocation();
-    console.log(location);
     const { pathname } = location;
     const splitLocation = pathname;
-    console.log(splitLocation);
+
    
 
   return (
@@ -48,22 +47,22 @@ function Navbar() {
                     </div>
 
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
-                            <Link to='/Games-APP-React' className='nav-links' onClick={closeMobileMenu}>
+                        <li className='custom-nav-item'>
+                            <Link to='/Games-APP-React' className={`nav-links ${splitLocation === '/Games-APP-React' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                 Ana səhifə
                             </Link>
                         </li>
-                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
-                            <Link to='/current-games' className='nav-links' onClick={closeMobileMenu}>
+                        <li className='custom-nav-item'>
+                            <Link to='/current-games' className={`nav-links ${splitLocation === '/current-games' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                 Mövcud oyunlar
                             </Link>
                         </li>
-                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
-                            <Link to='/upcoming-games' className='nav-links' onClick={closeMobileMenu}>
+                        <li className='custom-nav-item'>
+                            <Link to='/upcoming-games' className={`nav-links ${splitLocation === '/upcoming-games' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                 Gələcək oyunlar
                             </Link>
                         </li>
-                        <li className={splitLocation[1] === '' ? 'custom-nav-item active' : 'custom-nav-item'}>
+                        <li className='custom-nav-item'>
                             <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Qeydiyyat
                             </Link>
