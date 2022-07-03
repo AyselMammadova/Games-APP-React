@@ -2,13 +2,16 @@ import React from 'react';
 import '../../App.css';
 import Cards from '../Cards';
 import MainSection from '../MainSection';
+import CardContextProvider from '../contexts/CardContext';
 
-function Home(props) {
-    console.log(props)
+function Home() {
+    
     return (
         <>
             <MainSection />
-            <Cards games={props.games}/>
+            <CardContextProvider>
+                <Cards />
+            </CardContextProvider>
         </>
     );
 }
