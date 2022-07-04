@@ -77,7 +77,7 @@
   display: none;
 }
 
-a:hover {
+header a:hover {
   color: #fff !important;
 }
 

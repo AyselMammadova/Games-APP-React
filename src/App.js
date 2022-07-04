@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/Games-APP-React' element={<Home />} />
+          <Route path='/Games-APP-React/' element={<Home />} />
           <Route path='/current-games' element={<CardContextProvider><CurrentGames /></CardContextProvider>} />
         </Routes>
         

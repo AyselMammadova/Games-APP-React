@@ -37,7 +37,7 @@ function Navbar() {
         <header>
             <nav className='custom-navbar'>
                 <div className='navbar-container'>
-                    <Link to='/Games-APP-React' className='navbar-logo' onClick={closeMobileMenu}>
+                    <Link to='/Games-APP-React/' className='navbar-logo' onClick={closeMobileMenu}>
                     Games <img src={logo} alt='logo'/>
 
                     </Link> 
@@ -48,18 +48,13 @@ function Navbar() {
 
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='custom-nav-item'>
-                            <Link to='/Games-APP-React' className={`nav-links ${splitLocation === '/Games-APP-React' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                            <Link to='/Games-APP-React/' className={`nav-links ${splitLocation === '/Games-APP-React/' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                 Ana səhifə
                             </Link>
                         </li>
                         <li className='custom-nav-item'>
                             <Link to='/current-games' className={`nav-links ${splitLocation === '/current-games' ? 'active' : ''}`} onClick={closeMobileMenu}>
                                 Mövcud oyunlar
-                            </Link>
-                        </li>
-                        <li className='custom-nav-item'>
-                            <Link to='/upcoming-games' className={`nav-links ${splitLocation === '/upcoming-games' ? 'active' : ''}`} onClick={closeMobileMenu}>
-                                Gələcək oyunlar
                             </Link>
                         </li>
                         <li className='custom-nav-item'>

@@ -24,7 +24,7 @@ function CardContextProvider (props) {
     }, []);
 
 
-
+    // const sortedGames = games.sort((a,b) => (a.title < b.title ? -1 : 1 ));
 
 
   return (
