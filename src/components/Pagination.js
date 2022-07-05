@@ -24,26 +24,28 @@ const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  
   return (
     <div className="pagination">
         <span className="d-inline-block showing">
-            {totalGames} oyundan göstərilən oyun sayı {indexOfLastGame}
+            {totalGames} oyundan göstərilən oyun sayı {indexOfLastGame > totalGames ? totalGames : indexOfLastGame}
         </span>
         <ul className="d-flex flex-wrap align-items-center mb-0">
-            <li className={`page-item ${activePage === 1 ? 'disabled' : ''}`}
-            onClick = { () => setActivePage( (prev) => prev === 1 ? prev : prev - 1 ) }>
-                <a href="javascript:void(0)" className="page-link">
+            <li className={`page-item ${activePage === 1 ? 'disabled' : ''}`}>
+                <a href className="page-link"
+                onClick = { () => setActivePage( (prev) => prev === 1 ? prev : prev - 1 ) }>
                     <i className="fas fa-angle-double-left"></i>
                 </a>
             </li>
 
             {numPage.map((num, index) => 
-                <li key={index} className={`page-item ${activePage === num ? 'active' : ''}`}
-                onClick = { () => setActivePage(num) }>
-                    <a href="javascript:void(0)" className="page-link">{num}</a>
+                <li key={index} className={`page-item ${activePage === num ? 'active' : ''}`}>
+                    <a href className="page-link"
+                    onClick = { () => setActivePage(num) }>
+                        {num}
+                    </a>
                 </li>
             )}
 
-            <li className={`page-item ${activePage === numPage.length ? 'disabled' : ''}`}
-            onClick = { () => setActivePage( (prev) => prev === numPage.length ? prev : prev + 1 ) }>
-                <a href="javascript:void(0)" className="page-link">
+            <li className={`page-item ${activePage === numPage.length ? 'disabled' : ''}`}>
+                <a href className="page-link"
+                onClick = { () => setActivePage( (prev) => prev === numPage.length ? prev : prev + 1 ) }>
                     <i className="fas fa-angle-double-right"></i>
                 </a>
             </li>
