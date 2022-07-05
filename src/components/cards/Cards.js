@@ -1,7 +1,7 @@
 import React from 'react';
-import CardItem from './CardItem';
-import './Cards.css';
-import { CardContext } from './contexts/CardContext';
+import CardItem from '../cards/CardItem';
+import '../cards/Cards.css';
+import { CardContext } from '../context-api/CardContext';
 
 function Cards() {
  

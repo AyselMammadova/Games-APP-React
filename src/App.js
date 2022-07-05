@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/pages/Home';
 import CurrentGames from './components/pages/CurrentGames';
-import CardContextProvider from './components/contexts/CardContext';
+import CardContextProvider from './components/context-api/CardContext';
 
 function App() {
   

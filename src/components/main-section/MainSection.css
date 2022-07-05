@@ -19,6 +19,30 @@ video {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .2);
 }
 
+.main-sec-pages .main-container {
+    height: 250px;
+    background: url('../../img/1.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.main-sec-pages .main-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.main-sec-pages .main-container .search-group {
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    height: 70px;
+}
+
 .main-container > h1 {
     font-size: 100px;
 }

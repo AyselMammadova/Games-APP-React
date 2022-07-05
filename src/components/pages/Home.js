@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../App.css';
-import Cards from '../Cards';
-import MainSection from '../MainSection';
-import CardContextProvider from '../contexts/CardContext';
+import MainSection from '../main-section/MainSection';
+import Cards from '../cards/Cards';
+import CardContextProvider from '../context-api/CardContext';
 
 function Home() {
     

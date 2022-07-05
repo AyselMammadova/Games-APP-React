@@ -1,8 +1,8 @@
 import React from 'react';
-import '../App.css';
-import { Button } from './Button';
+import '../../App.css';
+import { Button } from '../button/Button';
 import './MainSection.css';
-import video from '../video/main-video.mp4';
+import video from '../../video/main-video.mp4';
 
 function MainSection() {
   return (

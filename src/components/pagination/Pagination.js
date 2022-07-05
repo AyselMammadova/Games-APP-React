@@ -30,7 +30,7 @@ const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  
             <li className={`page-item ${activePage === 1 ? 'disabled' : ''}`}>
                 <a href className="page-link"
                 onClick = { () => setActivePage( (prev) => prev === 1 ? prev : prev - 1 ) }>
-                    <i className="fas fa-angle-double-left"></i>
+                    <i className="fas fa-angle-double-left" />
                 </a>
             </li>
 
@@ -46,7 +46,7 @@ const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  
             <li className={`page-item ${activePage === numPage.length ? 'disabled' : ''}`}>
                 <a href className="page-link"
                 onClick = { () => setActivePage( (prev) => prev === numPage.length ? prev : prev + 1 ) }>
-                    <i className="fas fa-angle-double-right"></i>
+                    <i className="fas fa-angle-double-right" />
                 </a>
             </li>
         </ul>
