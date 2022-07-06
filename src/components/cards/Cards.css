@@ -25,12 +25,12 @@
     margin-bottom: 24px;
   }
   
-  .cards__item {
+  .cards__item__wrap {
     margin: 1rem 0;
     border-radius: 10px;
   }
   
-  .cards__item__link {
+  .cards__item {
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -41,6 +41,7 @@
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
+    cursor: pointer;
   }
   
   .cards__item__pic-wrap {
@@ -49,18 +50,12 @@
     padding-top: 67%;
     overflow: hidden;
   }
-  
-  .fade-img {
-    animation-name: fade-img;
-    animation-duration: 2s;
-  }
 
   .cards__item__pic-wrap::after {
     content: attr(data-category);
     position: absolute;
     left: 0;
-    bottom: 0;
-    margin-left: 10px;
+    top: 0;
     padding: 6px 8px;
     max-width: calc((100%) - 60px);
     font-size: 12px;
@@ -68,6 +63,7 @@
     color: #fff;
     background-color: #01b36b;
     box-sizing: border-box;
+    border-radius: 10px 0 0 0;
   }
 
   .cards__item__pic-wrap span {
@@ -82,6 +78,25 @@
     background-color: darkslategrey;
     box-sizing: border-box;
     border-radius: 0 10px 0 0;
+  }
+
+  .cards__item__pic-wrap .addFav {
+    bottom: 0;
+    background-color: #fff;
+    border: 2px solid #c55411;
+    color: #c55411;
+    display: flex;
+    align-items: center;
+    top: auto;
+    border-radius: 0;
+    padding: 14px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .cards__item__pic-wrap .addFav.active {
+    color: #fff;
+    background-color: #c55411;
   }
   
   .cards__item__img {
@@ -99,7 +114,7 @@
     transition: all 0.2s linear;
   }
   
-  .cards__item__img:hover {
+  .cards__item__pic-wrap:hover .cards__item__img {
     transform: scale(1.1);
   }
   

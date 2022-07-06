@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import MainSection from '../main-section/MainSection';
-import Cards from '../cards/Cards';
+import HitCards from '../cards/HitCards';
 import CardContextProvider from '../context-api/CardContext';
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
         <>
             <MainSection />
             <CardContextProvider>
-                <Cards />
+                <HitCards />
             </CardContextProvider>
         </>
     );

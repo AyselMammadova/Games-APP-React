@@ -59,6 +59,11 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='custom-nav-item'>
+                            <Link to='/fav-games' className={`nav-links ${splitLocation === '/fav-games' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                Sevimli oyunların
+                            </Link>
+                        </li>
+                        <li className='custom-nav-item'>
                             <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Qeydiyyat
                             </Link>

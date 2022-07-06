@@ -5,7 +5,7 @@ import { CardContext } from '../context-api/CardContext';
 import Pagination from '../pagination/Pagination';
 
 
-function AllGames(props) {
+function Favourites(props) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [gamePerPage] = useState(12); 
@@ -19,7 +19,7 @@ function AllGames(props) {
       {value => {
         return(
           <div className="cards">
-              <h1>Oyunlar</h1>
+              <h1>Sevimli Oyunların</h1>
               <div className="cards__container">
                   <div className="cards_wrapper w-100">
                     <div className="cards__items row">
@@ -74,4 +74,4 @@ function AllGames(props) {
   )
 }
 
-export default AllGames
+export default Favourites

@@ -1,9 +1,9 @@
 import React from 'react';
-import CardItem from '../cards/CardItem';
+import CardItem from './CardItem';
 import '../cards/Cards.css';
 import { CardContext } from '../context-api/CardContext';
 
-function Cards() {
+function HitCards(props) {
  
   return (
     <CardContext.Consumer>
@@ -22,7 +22,7 @@ function Cards() {
                           desc={game.short_description}
                           label={game.genre}
                           date={game.release_date}
-                          path='/'
+                          fav={false}
                           />
                   
                         )}
@@ -38,4 +38,4 @@ function Cards() {
   )
 }
 
-export default Cards
+export default HitCards

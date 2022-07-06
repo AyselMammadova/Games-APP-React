@@ -1,22 +1,22 @@
 import React from 'react';
 import '../../App.css';
 import '../main-section/MainSection.css';
-import AllGames from '../cards/AllGames';
+import Favourites from '../cards/Favourites.js'
 import MainSectionPages from '../main-section/MainSectionPages';
 import CardContextProvider from '../context-api/CardContext';
 
 
-function CurrentGames(props) {
+function FavGames(props) {
 
     return (
         <>
             <MainSectionPages slider={props.slider} searchedItem={props.searchedItem} onChange={props.onChange} />
 
             <CardContextProvider>
-              <AllGames searchedItem={props.searchedItem} />
+              <Favourites searchedItem={props.searchedItem} />
             </CardContextProvider>
         </>
     )
 }
 
-export default CurrentGames
+export default FavGames
