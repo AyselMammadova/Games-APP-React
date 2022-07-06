@@ -4,15 +4,14 @@ import '../cards/Cards.css';
 import { CardContext } from '../context-api/CardContext';
 import Pagination from '../pagination/Pagination';
 
+
 function AllGames() {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamePerPage] = useState(9); 
+  const [gamePerPage] = useState(12); 
 
   const indexOfLastGame = currentPage * gamePerPage;
   const indexOfFirstGame = indexOfLastGame - gamePerPage;
-  
-
 
 
   return (

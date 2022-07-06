@@ -28,26 +28,26 @@ const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  
         </span>
         <ul className="d-flex flex-wrap align-items-center mb-0">
             <li className={`page-item ${activePage === 1 ? 'disabled' : ''}`}>
-                <a href className="page-link"
+                <button role="link" className="page-link"
                 onClick = { () => setActivePage( (prev) => prev === 1 ? prev : prev - 1 ) }>
                     <i className="fas fa-angle-double-left" />
-                </a>
+                </button>
             </li>
 
             {numPage.map((num, index) => 
                 <li key={index} className={`page-item ${activePage === num ? 'active' : ''}`}>
-                    <a href className="page-link"
+                    <button role="link" className="page-link"
                     onClick = { () => setActivePage(num) }>
                         {num}
-                    </a>
+                    </button>
                 </li>
             )}
 
             <li className={`page-item ${activePage === numPage.length ? 'disabled' : ''}`}>
-                <a href className="page-link"
+                <button role="link" className="page-link"
                 onClick = { () => setActivePage( (prev) => prev === numPage.length ? prev : prev + 1 ) }>
                     <i className="fas fa-angle-double-right" />
-                </a>
+                </button>
             </li>
         </ul>
     </div>

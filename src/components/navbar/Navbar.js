@@ -35,14 +35,15 @@ function Navbar() {
   return (
     <>
         <header>
-            <nav className='custom-navbar'>
-                <div className='navbar-container'>
-                    <Link to='/Games-APP-React/' className='navbar-logo' onClick={closeMobileMenu}>
+            <div className='container-fluid'>
+                <nav className='custom-navbar w-100'>
+
+                    <Link to='/Games-APP-React/' className='navbar-logo me-auto' onClick={closeMobileMenu}>
                     Games <img src={logo} alt='logo'/>
 
                     </Link> 
 
-                    <div className='menu-icon' onClick={handleClick}>
+                    <div className='menu-icon ms-auto' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
 
@@ -64,8 +65,9 @@ function Navbar() {
                         </li>
                     </ul>
                     {button && <Button buttonStyle='btn--outline'>Qeydiyyat</Button>}
-                </div>
-            </nav>
+               
+                </nav>
+            </div>
         </header>
     </>
   )
