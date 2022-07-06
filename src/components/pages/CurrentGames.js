@@ -9,6 +9,7 @@ import img3 from '../../img/3.jpeg';
 
 function CurrentGames() {
 
+    //slider 
     const slider = [
         img1,
         img2,
@@ -19,14 +20,14 @@ function CurrentGames() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const nextSlide = ++ slideIndex % slideIndex.length;
+            const nextSlide = ++ slideIndex % slider.length;
             setSlideIndex(nextSlide);
         }, 2000);
         return () => clearInterval(interval);
-    }, [slideIndex]);
+    }, [slideIndex, slider.length]);
 
-    console.log(img1)
 
+    //search
     const [searchItem, setSearchItem] = useState('');
 
     const onChange = (e) => {
