@@ -23,6 +23,7 @@ video {
     height: 250px;
     background: url('../../img/1.jpg') no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
 }
 

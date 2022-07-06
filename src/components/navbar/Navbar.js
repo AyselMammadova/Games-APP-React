@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <>
         <header>
-            <div className='container-fluid'>
+            <div className='container'>
                 <nav className='custom-navbar w-100'>
 
                     <Link to='/Games-APP-React/' className='navbar-logo me-auto' onClick={closeMobileMenu}>

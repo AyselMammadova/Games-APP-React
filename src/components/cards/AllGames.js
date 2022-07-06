@@ -5,7 +5,7 @@ import { CardContext } from '../context-api/CardContext';
 import Pagination from '../pagination/Pagination';
 
 
-function AllGames() {
+function AllGames(props) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [gamePerPage] = useState(12); 
@@ -21,10 +21,17 @@ function AllGames() {
           <div className="cards">
               <h1>Oyunlar</h1>
               <div className="cards__container">
-                  <div className="cards_wrapper">
+                  <div className="cards_wrapper w-100">
                     <div className="cards__items row">
                       
-                      {value.games.slice(indexOfFirstGame, indexOfLastGame).map(game => 
+                      {value.games.filter(game => {
+                        if(props.searchedItem === '') {
+                          return game
+                        } else if(game.title.toLowerCase().includes(props.searchedItem.toLowerCase())) {
+                          return game
+                        }
+                        return false
+                      }).slice(indexOfFirstGame, indexOfLastGame).map(game => 
                         <CardItem
                         key={game.id}
                         src={game.thumbnail}
@@ -40,9 +47,23 @@ function AllGames() {
                     </div>
                     
                     <Pagination 
-                    pages = {Math.ceil(value.games.length / gamePerPage)}
+                    pages = {Math.ceil(value.games.filter(game => {
+                      if(props.searchedItem === '') {
+                        return game
+                      } else if(game.title.toLowerCase().includes(props.searchedItem.toLowerCase())) {
+                        return game
+                      }
+                      return false
+                    }).length / gamePerPage)}
                     setCurrentPage = {setCurrentPage}
-                    totalGames = {value.games.length}  
+                    totalGames = {value.games.filter(game => {
+                      if(props.searchedItem === '') {
+                        return game
+                      } else if(game.title.toLowerCase().includes(props.searchedItem.toLowerCase())) {
+                        return game
+                      }
+                      return false
+                    }).length}  
                     indexOfLastGame = {indexOfLastGame} />
                   </div>
               </div>
