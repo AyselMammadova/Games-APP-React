@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 function CardItem(props) {
 
   const [fav, setFav] = useState(props.fav);
 
   const AddFav = () => {
-    setFav(!fav)
+    setFav(!fav);
   }
+
+  useEffect(() => {
+    const favPosition = window.localStorage.getItem('fav');
+    console.log(favPosition);
+    if(favPosition !== null) {
+      setFav(JSON.parse(favPosition))
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('fav', JSON.stringify(fav));
+  }, [fav])
+
+  
+
+ 
+
+  
+  
 
 
   return (
     <>
-        <div className='cards__item__wrap col-lg-4 col-md-6' onClick={AddFav}>
+        <div className='cards__item__wrap col-lg-4 col-md-6' onClick={AddFav} >
           <div className="cards__item">
             <figure className='cards__item__pic-wrap mb-0' data-category={props.label}>
                 <img
