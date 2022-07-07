@@ -43,19 +43,42 @@ function App() {
       setSearchItem(e.target.value);
   }
 
+
+  //add favlist
+  const [fav, setFav] = useState(false);
+
+    const AddFav = () => {
+      setFav(!fav)
+    }
+  
+    useEffect(() => {
+      const favPosition = window.localStorage.getItem('fav');
+
+      if(favPosition !== null) {
+        setFav(JSON.parse(favPosition))
+      }
+    }, []);
+  
+    useEffect(() => {
+      window.localStorage.setItem('fav', JSON.stringify(fav));
+    }, [fav])
+
   
   return (
     <>
+
       <Router>
+
         <Navbar />
+        
         <Routes>
-          <Route path='/Games-APP-React/' element={<Home />} />
-          <Route path='/current-games' element={<CurrentGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} />} />
-          <Route path='/fav-games' element={<FavGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} />} />
+          <Route path='/Games-APP-React/' element={<Home fav={fav} AddFav={AddFav} />} />
+          <Route path='/current-games' element={<CurrentGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} fav={fav} AddFav={AddFav} />} />
+          <Route path='/fav-games' element={<FavGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} fav={fav} AddFav={AddFav} />} />
         </Routes>
         
       </Router>
-      
+    
     </>
   );
 }

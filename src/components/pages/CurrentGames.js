@@ -7,13 +7,14 @@ import CardContextProvider from '../context-api/CardContext';
 
 
 function CurrentGames(props) {
+    
 
     return (
         <>
             <MainSectionPages slider={props.slider} searchedItem={props.searchedItem} onChange={props.onChange} />
 
             <CardContextProvider>
-              <AllGames searchedItem={props.searchedItem} />
+              <AllGames searchedItem={props.searchedItem} fav={props.fav} AddFav={props.AddFav} />
             </CardContextProvider>
         </>
     )

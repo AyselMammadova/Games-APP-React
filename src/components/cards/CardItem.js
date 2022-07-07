@@ -1,37 +1,12 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React from 'react';
+
 
 function CardItem(props) {
-
-  const [fav, setFav] = useState(props.fav);
-
-  const AddFav = () => {
-    setFav(!fav);
-  }
-
-  useEffect(() => {
-    const favPosition = window.localStorage.getItem('fav');
-    console.log(favPosition);
-    if(favPosition !== null) {
-      setFav(JSON.parse(favPosition))
-    }
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('fav', JSON.stringify(fav));
-  }, [fav])
-
-  
-
- 
-
-  
-  
 
 
   return (
     <>
-        <div className='cards__item__wrap col-lg-4 col-md-6' onClick={AddFav} >
+        <div className='cards__item__wrap col-lg-4 col-md-6' onClick={props.AddFav}>
           <div className="cards__item">
             <figure className='cards__item__pic-wrap mb-0' data-category={props.label}>
                 <img
@@ -40,9 +15,9 @@ function CardItem(props) {
                 src={props.src}
                 />
                 <span className='date'>{props.date}</span>
-                <span className={`addFav ${fav ? 'active' : ''}`} >
-                  {fav ? 'Sevimli oyun' : 'Sevimli oyunun et'}
-                  <i className={`ms-2 fa-heart ${fav ? 'fas' : 'far'}`} />
+                <span className={`addFav ${props.fav ? 'active' : ''}`} >
+                  {props.fav ? 'Sevimli oyun' : 'Sevimli oyunun et'}
+                  <i className={`ms-2 fa-heart ${props.fav ? 'fas' : 'far'}`} />
                 </span>
             </figure>
             <div className='cards__item__info'>

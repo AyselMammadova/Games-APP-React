@@ -25,12 +25,13 @@ function Favourites(props) {
                     <div className="cards__items row">
                       
                       {value.games.filter(game => {
-                        if(props.searchedItem === '') {
+                        if((props.fav === true) && (props.searchedItem === '')) {
                           return game
-                        } else if(game.title.toLowerCase().includes(props.searchedItem.toLowerCase())) {
+                        } else if((props.fav === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
                           return game
+                        } else {
+                          return false
                         }
-                        return false
                       }).slice(indexOfFirstGame, indexOfLastGame).map(game => 
                         <CardItem
                         key={game.id}
@@ -39,7 +40,8 @@ function Favourites(props) {
                         desc={game.short_description}
                         label={game.genre}
                         date={game.release_date}
-                        fav={false}
+                        fav={props.fav}
+                        AddFav={props.AddFav}
                         />
                 
                       )}
@@ -48,21 +50,23 @@ function Favourites(props) {
                     
                     <Pagination 
                     pages = {Math.ceil(value.games.filter(game => {
-                      if(props.searchedItem === '') {
+                      if((props.fav === true) && (props.searchedItem === '')) {
                         return game
-                      } else if(game.title.toLowerCase().includes(props.searchedItem.toLowerCase())) {
+                      } else if((props.fav === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
                         return game
+                      } else {
+                        return false
                       }
-                      return false
                     }).length / gamePerPage)}
                     setCurrentPage = {setCurrentPage}
                     totalGames = {value.games.filter(game => {
-                      if(props.searchedItem === '') {
+                      if((props.fav === true) && (props.searchedItem === '')) {
                         return game
-                      } else if(game.title.toLowerCase().includes(props.searchedItem.toLowerCase())) {
+                      } else if((props.fav === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
                         return game
+                      } else {
+                        return false
                       }
-                      return false
                     }).length}  
                     indexOfLastGame = {indexOfLastGame} />
                   </div>

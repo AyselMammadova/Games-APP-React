@@ -13,7 +13,7 @@ function FavGames(props) {
             <MainSectionPages slider={props.slider} searchedItem={props.searchedItem} onChange={props.onChange} />
 
             <CardContextProvider>
-              <Favourites searchedItem={props.searchedItem} />
+              <Favourites searchedItem={props.searchedItem} fav={props.fav} AddFav={props.AddFav} />
             </CardContextProvider>
         </>
     )

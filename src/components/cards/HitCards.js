@@ -14,7 +14,7 @@ function HitCards(props) {
               <div className="cards__container">
                   <div className="cards_wrapper">
                       <div className="cards__items row">
-                        {value.games.slice(0, 9).map(game => 
+                        {value.games.slice(0, 6).map(game => 
                           <CardItem
                           key={game.id}
                           src={game.thumbnail}
@@ -22,7 +22,8 @@ function HitCards(props) {
                           desc={game.short_description}
                           label={game.genre}
                           date={game.release_date}
-                          fav={false}
+                          fav={props.fav}
+                          AddFav={props.AddFav}
                           />
                   
                         )}

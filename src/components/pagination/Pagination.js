@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Pagination.css';
+import Error from '../error/Error.js'
 
 const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  {
 
@@ -14,9 +15,6 @@ const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  
     useEffect(()=> {
         setCurrentPage(activePage)
     }, [activePage, setCurrentPage])
-
-
-
 
 
     
@@ -55,9 +53,9 @@ const Pagination = ({ pages, setCurrentPage, totalGames, indexOfLastGame }) =>  
     } 
     else if(pages === 0) {
         return(
-            <p className='text-center' style={{color: '#01b36b', padding: '50px 0', fontSize: '32px'}}>Oyun tapılmadı 
-                <i className="far fa-frown ms-2"></i>
-            </p>
+            <>
+            <Error />
+            </>
         )
     }
 

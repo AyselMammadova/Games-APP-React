@@ -4,13 +4,13 @@ import MainSection from '../main-section/MainSection';
 import HitCards from '../cards/HitCards';
 import CardContextProvider from '../context-api/CardContext';
 
-function Home() {
+function Home(props) {
     
     return (
         <>
             <MainSection />
             <CardContextProvider>
-                <HitCards />
+                <HitCards  fav={props.fav} AddFav={props.AddFav} />
             </CardContextProvider>
         </>
     );
