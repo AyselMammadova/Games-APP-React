@@ -79,7 +79,7 @@ header a:not(.nav-links):not(.nav-links-mobile):hover {
   color: #fff !important;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 992px) {
   .NavbarItems {
     position: relative;
   }

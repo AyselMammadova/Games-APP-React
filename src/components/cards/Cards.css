@@ -1,19 +1,10 @@
 .cards {
-    padding: 4rem;
+    padding: 4rem 0;
     background: #fff;
   }
   
   h1 {
     text-align: center;
-  }
-  
-  .cards__container {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    max-width: 1120px;
-    width: 90%;
-    margin: 0 auto;
   }
   
   .cards__wrapper {
@@ -55,7 +46,7 @@
     content: attr(data-category);
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     padding: 6px 8px;
     max-width: calc((100%) - 60px);
     font-size: 12px;
@@ -63,7 +54,6 @@
     color: #fff;
     background-color: #01b36b;
     box-sizing: border-box;
-    border-radius: 10px 0 0 0;
   }
 
   .cards__item__pic-wrap span {
@@ -80,21 +70,20 @@
     border-radius: 0 10px 0 0;
   }
 
-  .cards__item__pic-wrap .addFav {
-    bottom: 0;
+  .cards__item .addFav {
     background-color: #fff;
     border: 2px solid #c55411;
     color: #c55411;
     display: flex;
     align-items: center;
-    top: auto;
-    border-radius: 0;
-    padding: 14px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 0;
     font-size: 16px;
     transition: all 0.2s ease;
   }
 
-  .cards__item__pic-wrap .addFav.active {
+  .cards__item .addFav.active {
     color: #fff;
     background-color: #c55411;
   }
@@ -126,11 +115,13 @@
     color: #252e48;
     font-size: 18px;
     line-height: 24px;
+    height: 48px;
   }
-  
-  @media only screen and (min-width: 1200px) {
-    .content__blog__container {
-      width: 84%;
-    }
+
+  .cards__desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
  

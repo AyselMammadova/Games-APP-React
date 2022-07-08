@@ -20,7 +20,7 @@ function Favourites(props) {
         return(
           <div className="cards">
               <h1>Sevimli Oyunların</h1>
-              <div className="cards__container">
+              <div className="custom-container">
                   <div className="cards_wrapper w-100">
                     <div className="cards__items row">
                       

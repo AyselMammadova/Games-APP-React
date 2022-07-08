@@ -6,6 +6,15 @@
     'Lucida Sans', Arial, sans-serif;
   }
 
+  .custom-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .form-control:focus {
     box-shadow: none !important;
     outline: none !important;

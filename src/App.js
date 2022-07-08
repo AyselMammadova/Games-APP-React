@@ -53,7 +53,7 @@ function App() {
   
     useEffect(() => {
       const favPosition = window.localStorage.getItem('fav');
-
+      console.log(favPosition);
       if(favPosition !== null) {
         setFav(JSON.parse(favPosition))
       }

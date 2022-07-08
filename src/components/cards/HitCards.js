@@ -11,10 +11,10 @@ function HitCards(props) {
         return (
           <div className="cards">
               <h1>Hit oyunlar</h1>
-              <div className="cards__container">
+              <div className="custom-container">
                   <div className="cards_wrapper">
                       <div className="cards__items row">
-                        {value.games.slice(0, 6).map(game => 
+                        {value.games.slice(0, 12).map(game => 
                           <CardItem
                           key={game.id}
                           src={game.thumbnail}

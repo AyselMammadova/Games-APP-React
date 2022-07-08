@@ -12,7 +12,7 @@ function Navbar() {
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
-        if(window.innerWidth <= 960) {
+        if(window.innerWidth <= 992) {
             setButton(false);
         } else {
             setButton(true);
@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <>
         <header>
-            <div className='container'>
+            <div className='custom-container'>
                 <nav className='custom-navbar w-100'>
 
                     <Link to='/Games-APP-React/' className='navbar-logo me-auto' onClick={closeMobileMenu}>
