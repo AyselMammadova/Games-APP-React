@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function CardItem(props) {
-  // const AddFav = () => {
-  //   !(props.fav)
-  // }
+  
+  const [fav, setFav] = useState(props.fav);
 
-  // const [newFav, setNewFav] = useState(props.fav);
+  const addFav= () => {
+    setFav(prevFav => !prevFav);
+  }
 
-  // useEffect(() => {
-  //   const favPosition = window.localStorage.getItem('fav');
-  //   console.log(favPosition);
-  //   if(favPosition !== null) {
-  //     setNewFav(JSON.parse(favPosition))
-  //   }
-  // }, []);
+    useEffect(() => {
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('fav', JSON.stringify(fav));
-  // }, [fav])
+     setFav(JSON.parse(window.localStorage.getItem(props.id)));
+
+    }, [props.id]);
+  
+    useEffect(() => {
+      window.localStorage.setItem(props.id, fav);
+    }, [fav, props.id])
+  
+  
 
   return (
     <>
-        <div className='cards__item__wrap col-xl-3 col-lg-4 col-sm-6' onClick={props.AddFav}>
+        <div className='cards__item__wrap col-xl-3 col-lg-4 col-sm-6' onClick={() => addFav()}>
           <div className="cards__item">
             <figure className='cards__item__pic-wrap mb-0' data-category={props.label}>
                 <img
@@ -35,9 +36,9 @@ function CardItem(props) {
             <div className='cards__item__info'>
                 <h5 className='cards__item__text'>{props.text}</h5>
                 <p className='cards__desc text-dark mb-0'>{props.desc}</p>
-                <div className={`addFav ${props.fav ? 'active' : ''}`} >
-                  {props.fav ? 'Sevimli oyun' : 'Sevimli oyunun et'}
-                  <i className={`ms-2 fa-heart ${props.fav ? 'fas' : 'far'}`} />
+                <div className={`addFav ${fav ? 'active' : ''}`} >
+                  {fav ? 'Sevimli oyun' : 'Sevimli oyunun et'}
+                  <i className={`ms-2 fa-heart ${fav ? 'fas' : 'far'}`} />
                 </div>
             </div>
           </div>

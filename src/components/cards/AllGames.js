@@ -98,13 +98,13 @@ function AllGames(props) {
                       }).slice(indexOfFirstGame, indexOfLastGame).map(game => 
                         <CardItem
                         key={game.id}
+                        id={game.id}
                         src={game.thumbnail}
                         text={game.title}
                         desc={game.short_description}
                         label={game.genre}
                         date={game.release_date}
-                        fav={props.fav}
-                        AddFav={props.AddFav}
+
                         />
                 
                       )}
