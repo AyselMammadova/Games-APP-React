@@ -24,6 +24,13 @@ function CardContextProvider (props) {
     }, []);
 
 
+    // add fav property
+    games.forEach(game => {
+      game.fav = false;
+    });
+
+    console.log(games)
+
 
   return (
     <CardContext.Provider value = {{games}}>

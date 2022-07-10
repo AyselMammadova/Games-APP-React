@@ -43,26 +43,6 @@ function App() {
       setSearchItem(e.target.value);
   }
 
-
-  //add favlist
-  // const [fav, setFav] = useState(false);
-
-  //   const AddFav = () => {
-  //     setFav(prevFav => !prevFav);
-  //   }
-  
-  //   useEffect(() => {
-  //     const favPosition = window.localStorage.getItem('fav');
-  //     console.log(favPosition);
-  //     if(favPosition !== null) {
-  //       setFav(JSON.parse(favPosition))
-  //     }
-  //   }, []);
-  
-  //   useEffect(() => {
-  //     window.localStorage.setItem('fav', JSON.stringify(fav));
-  //   }, [fav])
-
   
   return (
     <>

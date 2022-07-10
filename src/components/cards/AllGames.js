@@ -104,7 +104,7 @@ function AllGames(props) {
                         desc={game.short_description}
                         label={game.genre}
                         date={game.release_date}
-
+                        fav={game.fav}
                         />
                 
                       )}

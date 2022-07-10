@@ -9,15 +9,17 @@ function CardItem(props) {
     setFav(prevFav => !prevFav);
   }
 
-    useEffect(() => {
+  useEffect(() => {
 
-     setFav(JSON.parse(window.localStorage.getItem(props.id)));
+    setFav(JSON.parse(window.localStorage.getItem(props.id)));
 
-    }, [props.id]);
-  
-    useEffect(() => {
-      window.localStorage.setItem(props.id, fav);
-    }, [fav, props.id])
+  }, [props.id]);
+
+  useEffect(() => {
+
+    window.localStorage.setItem(props.id, fav);
+
+  }, [fav, props.id])
   
   
 
