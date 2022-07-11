@@ -25,9 +25,9 @@ function Favourites(props) {
                     <div className="cards__items row">
                       
                       {value.games.filter(game => {
-                        if((game.fav === true) && (props.searchedItem === '')) {
+                        if((JSON.parse(window.localStorage.getItem(game.id)) === true) && (props.searchedItem === '')) {
                           return game
-                        } else if((game.fav === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
+                        } else if((JSON.parse(window.localStorage.getItem(game.id)) === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
                           return game
                         } else {
                           return false
@@ -41,7 +41,6 @@ function Favourites(props) {
                         desc={game.short_description}
                         label={game.genre}
                         date={game.release_date}
-                        fav={game.fav}
                         />
                 
                       )}
@@ -50,9 +49,9 @@ function Favourites(props) {
                     
                     <Pagination 
                     pages = {Math.ceil(value.games.filter(game => {
-                      if((game.fav === true) && (props.searchedItem === '')) {
+                      if((JSON.parse(window.localStorage.getItem(game.id)) === true) && (props.searchedItem === '')) {
                         return game
-                      } else if((game.fav === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
+                      } else if((JSON.parse(window.localStorage.getItem(game.id)) === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
                         return game
                       } else {
                         return false
@@ -60,9 +59,9 @@ function Favourites(props) {
                     }).length / gamePerPage)}
                     setCurrentPage = {setCurrentPage}
                     totalGames = {value.games.filter(game => {
-                      if((game.fav === true) && (props.searchedItem === '')) {
+                      if((JSON.parse(window.localStorage.getItem(game.id)) === true) && (props.searchedItem === '')) {
                         return game
-                      } else if((game.fav === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
+                      } else if((JSON.parse(window.localStorage.getItem(game.id)) === true) && (game.title.toLowerCase().includes(props.searchedItem.toLowerCase()))) {
                         return game
                       } else {
                         return false

@@ -18,8 +18,11 @@ function AllGames(props) {
   //select
   const selects = [
     { value: 'asc', label: 'Köhnədən Yeniyə' },
-    { value: 'desc', label: 'Yenidən Köhnəyə' }
+    { value: 'desc', label: 'Yenidən Köhnəyə' },
+    { value: 'abc', label: 'A-dan Z-ə' },
+    { value: 'cba', label: 'Z-dən A-ya' }
   ]
+
 
   const customStyles = {
     control: (base, state) => ({
@@ -68,7 +71,7 @@ function AllGames(props) {
                               onChange={handleChange}
                               styles={customStyles}
                               options={selects} 
-                              placeholder={<div>Çıxış tarixinə görə filtrlə...</div>} 
+                              placeholder={<div>Filtrlə...</div>} 
                             />
                           </div>
                           <div className="col-md-4 mt-2 mt-md-0">
@@ -91,9 +94,14 @@ function AllGames(props) {
                           return a.release_date > b.release_date ? 1 : a.release_date < b.release_date ? -1 : 0;
                         } else if(selectedOption.value === 'desc') {
                           return a.release_date > b.release_date ? -1 : a.release_date < b.release_date ? 1 : 0;
+                        } else if(selectedOption.value === 'abc') {
+                          return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 0;
+                        } else if(selectedOption.value === 'cba') {
+                          return a.title.toLowerCase() > b.title.toLowerCase() ? -1 : a.title.toLowerCase() < b.title.toLowerCase() ? 1 : 0;
                         } else if(selectedOption.value === '') {
                           return 0
                         } 
+
                         return 0
                       }).slice(indexOfFirstGame, indexOfLastGame).map(game => 
                         <CardItem
@@ -104,7 +112,6 @@ function AllGames(props) {
                         desc={game.short_description}
                         label={game.genre}
                         date={game.release_date}
-                        fav={game.fav}
                         />
                 
                       )}
