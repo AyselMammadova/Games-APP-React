@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -56,6 +57,8 @@ function App() {
           <Route path='/current-games' element={<CurrentGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} />} />
           <Route path='/fav-games' element={<FavGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} />} />
         </Routes>
+
+        <Footer />
         
       </Router>
     
