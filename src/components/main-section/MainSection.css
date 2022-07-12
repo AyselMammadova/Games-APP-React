@@ -46,11 +46,18 @@ video {
 
 .main-container > h1 {
     font-size: 100px;
+    position: relative;
+    z-index: 1;
 }
 
 .main-container > p {
     margin-top: 8px;
     font-size: 32px;
+}
+
+.main-container strong {
+    position: relative;
+    z-index: 1;
 }
 
 .main-btns {

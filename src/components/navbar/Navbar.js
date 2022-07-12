@@ -64,12 +64,12 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='custom-nav-item'>
-                            <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                Qeydiyyat
+                            <Link to='/contact' className={`nav-links-mobile ${splitLocation === '/contact' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                                Əlaqə
                             </Link>
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>Qeydiyyat</Button>}
+                    {button && <Button buttonStyle='btn--outline'>Əlaqə</Button>}
                
                 </nav>
             </div>

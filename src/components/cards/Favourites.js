@@ -19,8 +19,8 @@ function Favourites(props) {
       {value => {
         return(
           <div className="cards">
-              <h1>Sevimli Oyunların</h1>
               <div className="custom-container">
+                <h1>Sevimli Oyunların</h1>
                   <div className="cards_wrapper w-100">
                     <div className="cards__items row">
                       

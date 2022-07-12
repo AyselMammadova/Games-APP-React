@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/pages/Home';
 import CurrentGames from './components/pages/CurrentGames';
 import FavGames from './components/pages/FavGames';
+import Contact from './components/pages/Contact';
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
 import img3 from './img/3.png';
@@ -56,6 +57,7 @@ function App() {
           <Route path='/Games-APP-React/' element={<Home />} />
           <Route path='/current-games' element={<CurrentGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} />} />
           <Route path='/fav-games' element={<FavGames slider={slider[slideIndex]} searchedItem={searchItem} onChange={onChange} />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
 
         <Footer />
