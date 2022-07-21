@@ -2,6 +2,7 @@ import React from 'react';
 import CardItem from './CardItem';
 import '../cards/Cards.css';
 import { CardContext } from '../context-api/CardContext';
+import { Link } from 'react-router-dom';
 
 function HitCards(props) {
  
@@ -11,7 +12,7 @@ function HitCards(props) {
         return (
           <div className="cards">
               <div className="custom-container">
-                <h1>Hit oyunlar</h1>
+                <h1>Sənə maraqlı gələ biləcək oyunlar</h1>
                   <div className="cards_wrapper">
                       <div className="cards__items row">
                         {value.games.slice(0, 12).map(game => 
@@ -29,6 +30,10 @@ function HitCards(props) {
 
                     </div>
                   </div>
+
+                  <Link to='/current-games' className="all-games">
+                    Bütün oyunlara bax
+                  </Link>
               </div>
           </div>
         )

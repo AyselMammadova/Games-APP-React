@@ -20,11 +20,18 @@ video {
 }
 
 .main-sec-pages .main-container {
-    height: 300px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    height: 400px;
     position: relative;
+    clip-path: inset(0);
+}
+
+.main-sec-pages .main-container img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: 300ms all ease-in-out;
 }
 
 .main-sec-pages .main-container::after {

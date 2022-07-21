@@ -3,7 +3,8 @@ import React from 'react'
 function MainSectionPages(props) {
   return (
     <main className="main-sec-pages">
-        <div className="main-container" style={{backgroundImage: "url(" + props.slider + ")"}}>
+        <div className="main-container">
+          <img src={props.slider} alt="slider-item" />
             <div className="search-group input-group flex-nowrap">
                 <span className="input-group-text" id="search">
                     <i className="fas fa-search" />
