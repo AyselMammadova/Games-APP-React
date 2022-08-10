@@ -16,7 +16,7 @@ function CardContextProvider (props) {
           }
         };
 
-        let url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+        let url = process.env.REACT_APP_SECRET_KEY;
 
         fetch(url, options)
         .then(response => response.json())
